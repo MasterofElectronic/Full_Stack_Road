@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .Galeria{
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 80%;
+        }
+
+        .Galeria div {
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Galeria de Imagenes</h1>
+
+    <div style="text-align: center; margin-bottom: 20px;">
+        <input type="text" id="imageUrl" placeholder="URL de la imagen">
+        <input type="text" id="Footprint" placeholder="Pie de foto">
+        <button onclick="addImage()">Agregar Imagen</button>
+    </div>
+
+    <div class="Galeria" id="GaleriaImg">
+
+        <div>
+
+            <img src="./imgs/Snorlax.webp" alt="Imagen Snorlax" width="300" height="250">
+            <p>Pie de foto Snorlax</p>
+
+        </div>
+
+        <div>
+
+            <img src="./imgs/007.png" alt="Imagen Snorlax" width="300" height="250">
+            <p>Pie de foto Snorlax</p>
+
+        </div>
+
+        <div>
+
+            <img src="./imgs/descarga.jpeg" alt="Imagen Snorlax" width="300" height="250">
+            <p>Pie de foto Snorlax</p>
+
+        </div>
+
+        <div>
+
+            <img src="./imgs/images.png" alt="Imagen Snorlax" width="300" height="250">
+            <p>Pie de foto Snorlax</p>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function addImage(){
+            let URL = document.getElementById("imageUrl").value;
+            let pie = document.getElementById("Footprint").value;
+
+            const galeria = document.getElementById("GaleriaImg");
+
+            let div = document.createElement("div");
+
+            let img = document.createElement("img");
+
+            img.src = URL;
+
+            img.width = 300;
+            img.height = 250;
+
+            let p = document.createElement("p");
+
+            p.textContent = pie;
+
+
+            div.appendChild(img);
+
+            div.appendChild(p);
+
+            galeria.appendChild(div);
+
+        }
+
+    </script>
+</body>
+</html>

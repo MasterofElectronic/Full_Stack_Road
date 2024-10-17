@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/my-handling-form-page" method="post">
+        <ul>
+            <li>
+                <label for="name">Name (4 to 8 characters):</label>
+                <input type="text" id="name" name="name" required minlength="4" maxlength="8" size="10"/>    
+            </li>
+            <li>
+                <label for="email">Enter your email:</label>
+                <input type="email" id="email" pattern=".+@example\.com" size="30" required />
+            </li>
+            <li>
+                <label for="msg">Mensaje:</label>
+                <textarea id="msg" name="user_message"></textarea>
+            </li>
+        </ul>
+    </form>
+    <form>
+        <fieldset>
+          <legend>Tamaño del zumo de fruta</legend>
+          <p>
+            <input type="radio" name="size" id="size_1" value="small" />
+            <label for="size_1">Pequeño</label>
+          </p>
+          <p>
+            <input type="radio" name="size" id="size_2" value="medium" />
+            <label for="size_2">Mediano</label>
+          </p>
+          <p>
+            <input type="radio" name="size" id="size_3" value="large" />
+            <label for="size_3">Grande</label>
+          </p>
+        </fieldset>
+      </form>
+      <section>
+        <h2>Información de pago</h2>
+        <p>
+          <label for="card">
+            <span>Tipo de tarjeta:</span>
+          </label>
+          <select id="card" name="usercard">
+            <option value="visa">Visa</option>
+            <option value="mc">Mastercard</option>
+            <option value="amex">American Express</option>
+          </select>
+        </p>
+        <p>
+          <label for="number">
+            <span>Número de tarjeta:</span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input type="tel" id="number" name="cardnumber" />
+        </p>
+        <p>
+          <label for="date">
+            <span>Fecha de caducidad:</span>
+            <strong><abbr title="required">*</abbr></strong>
+            <em>el formato mm/aa</em>
+          </label>
+          <input type="date" id="date" name="expiration" />
+        </p>
+      </section>
+      <p><button type="submit">Validar el pago</button></p>
+</body>
+</html>
